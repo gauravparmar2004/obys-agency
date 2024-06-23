@@ -1,3 +1,36 @@
+function locomotiveAnimation() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    smooth: true,
+  });
+  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+  locoScroll.on("scroll", ScrollTrigger.update);
+
+  ScrollTrigger.scrollerProxy("#main", {
+    scrollTop(value) {
+      return arguments.length
+        ? locoScroll.scrollTo(value, 0, 0)
+        : locoScroll.scroll.instance.scroll.y;
+    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+    pinType: document.querySelector("#main").style.transform
+      ? "transform"
+      : "fixed",
+  });
+
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+  ScrollTrigger.refresh();
+}
 function loadingAnimation() {
   var tl = gsap.timeline();
 
@@ -41,8 +74,21 @@ function loadingAnimation() {
   tl.to("#loader", {
     display: "none",
   });
+  tl.from("#nav", {
+    opacity: 0,
+  });
+  tl.from("#hero-1 h1,#hero-2 h1,#hero-3 h2,#hero-4 h1 ", {
+    y: 140,
+    stagger: 0.2,
+  });
+  tl.from(
+    "#hero-1 h1,#page2 ",
+    {
+      opacity: 0,
+    },
+    "-=1.2"
+  );
 }
-loadingAnimation();
 function cursorAnimation() {
   document.addEventListener("mousemove", function (dets) {
     gsap.to("#crsr", {
@@ -53,4 +99,6 @@ function cursorAnimation() {
 
   Shery.makeMagnet("#nav-part2 h4", {});
 }
-cursorAnimation();
+locomotiveAnimation();
+loadingAnimation();
+// cursorAnimation();
