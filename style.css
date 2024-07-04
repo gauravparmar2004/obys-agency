@@ -18,7 +18,14 @@ body {
     background: #151515;
 }
 
-#crsr {
+.mousefollower {
+    border: 2px solid #fff;
+    background-color: rgb(255, 255, 255);
+    scale: 2;
+    mix-blend-mode: difference;
+}
+
+/* #crsr {
     height: 2.8vw;
     width: 2.8vw;
     border: 1px solid rgba(245, 245, 245, 0.818);
@@ -27,7 +34,7 @@ body {
     z-index: 9999;
     mix-blend-mode: difference;
     transform: translate(-50%, -50%);
-}
+} */
 
 #loader {
     height: 100%;
@@ -206,15 +213,10 @@ body {
     width: 71vw;
     left: 28%;
     position: relative;
+    background-color: red;
     background-image: url(/img/Showreel-2022-preview-1.jpg);
-}
-
-#video-container img {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    top: 0;
+    background-size: cover;
+    background-position: center;
 }
 
 #video-container video {
@@ -246,7 +248,154 @@ body {
 #page3 {
     min-height: 100vh;
     width: 100%;
-    background-color: gray;
+    position: relative;
+    padding: 17vh 2vw;
+    margin-bottom: 20vh;
+    margin-top: 20vh;
+}
+
+#page3 h1 {
+    font-size: 7vw;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 28vw;
+}
+
+#page3 h1::before {
+    content: "02";
+    position: absolute;
+    font-size: 3.2vw;
+    font-weight: 100;
+    font-family: "silk serif";
+    left: -13%;
+    top: 11%;
+}
+
+#page3 .underline {
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+    margin: 5vw 0;
+    margin-left: 28vw;
+}
+
+#image-div-container {
+    /* background-color: red; */
+    padding: 1vw;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+}
+
+.image-div {
+    height: 39vw;
+    width: 29vw;
+    position: relative;
+    overflow: hidden;
+    /* background-color: blue; */
+    flex-shrink: 0;
+    margin: 2vw;
+}
+
+.image-div:nth-child(1) {
+    height: 31vw;
+    width: 23vw;
+}
+
+.image-div:nth-child(5) {
+    height: 39vw;
+    width: 29vw;
+    margin: 10vw 0vw;
+    margin-left: 6.2vw;
+}
+
+.image-div:nth-child(6) {
+    height: 36w;
+    width: 31vw;
+}
+
+.image-div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+.page3-circle1 {
+    height: 23vw;
+    width: 23vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 23vh;
+    margin-left: 10vw;
+}
+
+.page3-circle1 svg {
+    height: 30%;
+}
+
+.page3-circle2 {
+    height: 23vw;
+    width: 23vw;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page3-circle2 svg {
+    height: 30%;
+    rotate: -45deg;
+}
+
+.circle-in {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+}
+
+.circle-in p {
+    color: #000;
+    font-size: 0.9vw;
+    width: 60%;
+    scale: 0;
+    transition: all ease 0.3s;
+    transition-delay: 0.6s;
+}
+
+.page3-circle1:hover .circle-in {
+    scale: 1;
+}
+
+.page3-circle1:hover .circle-in p {
+    scale: 1;
+}
+
+.page3-circle2:hover .circle-in {
+    scale: 1;
+}
+
+.page3-circle2:hover .circle-in p {
+    scale: 1;
 }
 
 #page4 {
@@ -467,4 +616,9 @@ body {
 #footer>h5 {
     font-size: 1.1vw;
     font-weight: 500;
+}
+
+._canvas_container {
+    z-index: 9999 !important;
+    pointer-events: none;
 }
