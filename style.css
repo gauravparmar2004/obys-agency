@@ -201,10 +201,19 @@ body {
     border-bottom: 0.5vw solid rgba(255, 255, 255, 0);
 }
 
+#flag {
+    height: 25vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
 #page2 {
     height: 100vh;
     width: 100%;
-    padding-top: 17vh;
+    padding-top: 20vh;
     position: relative;
 }
 
@@ -250,8 +259,8 @@ body {
     width: 100%;
     position: relative;
     padding: 17vh 2vw;
-    margin-bottom: 20vh;
-    margin-top: 20vh;
+    margin-bottom: 25vh;
+    margin-top: 25vh;
 }
 
 #page3 h1 {
@@ -403,6 +412,7 @@ body {
     width: 100%;
     position: relative;
     padding: 7vh 0;
+    margin-bottom: 10vw;
 }
 
 #page4-content {
