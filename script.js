@@ -201,9 +201,20 @@ function flagAnimation() {
     });
   });
 }
-
+function textAnimation() {
+  gsap.from("#footer h1", {
+    opacity: 0,
+    y: 50,
+    delay: 0.5,
+    duration: 1,
+    onStart: function () {
+      $("#footer h1").textillate({ in: { effect: "fadeIn" } });
+    },
+  });
+}
 locomotiveAnimation();
 loadingAnimation();
 cursorAnimation();
 sheryAnimation();
-flagAnimation()
+flagAnimation();
+textAnimation();
