@@ -314,7 +314,7 @@ body {
     left: 28%;
     position: relative;
     background-color: red;
-    background-image: url(/img/Showreel-2022-preview-1.png);
+    background-image: url(./img/Showreel-2022-preview-1.png);
     background-size: cover;
     background-position: center;
 }
@@ -920,7 +920,7 @@ body {
         left: 0;
         position: relative;
         background-color: red;
-        background-image: url(/img/Showreel-2022-preview-1.png);
+        background-image: url(./img/Showreel-2022-preview-1.png);
         background-size: cover;
         background-position: center;
     }
